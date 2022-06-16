@@ -51,7 +51,6 @@ function startTimer()
     interval=setInterval(function() {
         if(mins.value==0&&secs.value==0)
         {
-          start.disabled=true;
         clearInterval(interval);
         ring.style.stroke="red";
         start.innerHTML="START";
