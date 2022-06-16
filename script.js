@@ -25,17 +25,15 @@ function startStop()
     disableInput();
     if(start.innerHTML === "START")
     {
-        if(!(mins.value>=0 && mins.value<=60) || !(secs.value>=0 && secs.value<=60) || mins.value=="" || secs.value=="")
+        if(!(mins.value>=00 && mins.value<=60) || !(secs.value>=00 && secs.value<=60) || mins.value=="" || secs.value=="")
     {
-        console.log("perfect0");
         alert("Enter the valid time");
         ring.style.stroke="green";
         mins.value="00";
-        secs.value="00";
+        secs.value="05";
     }
     else
     {
-       
         startTimer();
     }
    }
@@ -53,6 +51,7 @@ function startTimer()
     interval=setInterval(function() {
         if(mins.value==0&&secs.value==0)
         {
+          start.disabled=true;
         clearInterval(interval);
         ring.style.stroke="red";
         start.innerHTML="START";
@@ -61,6 +60,8 @@ function startTimer()
         setTimeout(() => {
             alert("Times up!");
             ring.style.stroke="green";
+            mins.value="00";
+            secs.value="05";
         }, 100)
         }
         else
