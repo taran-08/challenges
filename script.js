@@ -2,31 +2,32 @@ const mins = document.querySelector(".mins");
 const secs = document.querySelector(".secs");
 const start = document.querySelector(".start");
 const setting = document.querySelector(".settings");
-var interval;
+let interval;
 
-function settingOf() {
+settingOf = () => {
     stopTimer();
     allowInput();
 }
-function allowInput() {
+allowInput = () => {
     mins.disabled = false;
     secs.disabled = false;
 }
-function disableInput() {
+disableInput = () => {
     mins.disabled = true;
     secs.disabled = true;
 }
-
-function startStop() {
+isValidTime = () => {
+    if ((mins.value > 0 && mins.value < 60) || (secs.value > 0 && secs.value < 60)) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+startStop = () => {
     disableInput();
     if (start.innerHTML === "START") {
-        if ((mins.value > 60 && secs.value > 60) || (mins.value < 0 && secs.value < 0)) {
-            alert("Enter the valid time");
-            ring.style.stroke = "green";
-            mins.value = "00";
-            secs.value = "05";
-        }
-        else if ((mins.value == 00 && secs.value == 0) || (mins.value == 0 && secs.value == 0)) {
+        if (isValidTime()) {
             alert("Enter the valid time");
             ring.style.stroke = "green";
             mins.value = "00";
@@ -40,8 +41,7 @@ function startStop() {
         stopTimer();
     }
 }
-
-function startTimer() {
+startTimer = () => {
 
     ring.style.stroke = "blue";
     start.innerHTML = "PAUSE";
@@ -74,7 +74,7 @@ function startTimer() {
     }, 1000);
 
 }
-function stopTimer() {
+stopTimer = () => {
     start.innerHTML = "START";
     ring.style.stroke = "yellow";
     clearInterval(interval);
