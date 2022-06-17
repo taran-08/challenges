@@ -1,30 +1,15 @@
-const mins = document.querySelector(".mins");
-const secs = document.querySelector(".secs");
-const start = document.querySelector(".start");
-const setting = document.querySelector(".settings");
+import { allowInput, disableInput, isValidTime, startTimer, stopTimer } from "./util.js";
+export let mins = document.querySelector(".mins");
+export let secs = document.querySelector(".secs");
+export let start = document.querySelector(".start");
+export let setting = document.querySelector(".settings");
 let interval;
 
-settingOf = () => {
+const settingOf = () => {
     stopTimer();
     allowInput();
 }
-allowInput = () => {
-    mins.disabled = false;
-    secs.disabled = false;
-}
-disableInput = () => {
-    mins.disabled = true;
-    secs.disabled = true;
-}
-isValidTime = () => {
-    if ((mins.value > 0 && mins.value < 60) || (secs.value > 0 && secs.value < 60)) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
-startStop = () => {
+const startStop = () => {
     disableInput();
     if (start.innerHTML === "START") {
         if (isValidTime()) {
@@ -41,42 +26,6 @@ startStop = () => {
         stopTimer();
     }
 }
-startTimer = () => {
 
-    ring.style.stroke = "blue";
-    start.innerHTML = "PAUSE";
-    interval = setInterval(function () {
-        if (mins.value == 0 && secs.value == 0) {
-            clearInterval(interval);
-            ring.style.stroke = "red";
-            start.innerHTML = "START";
-            mins.value = "00";
-            secs.value = "00";
-            setTimeout(() => {
-                alert("Times up!");
-                ring.style.stroke = "green";
-                mins.value = "00";
-                secs.value = "05";
-            }, 100)
-        }
-        else {
-            if (secs.value == 0) {
-                mins.value = mins.value - 1;
-                mins.value = ('0' + mins.value).slice(-2);
-                secs.value = "59";
-
-            }
-            else {
-                secs.value = secs.value - 1;
-                secs.value = ('0' + secs.value).slice(-2);
-            }
-        }
-    }, 1000);
-
-}
-stopTimer = () => {
-    start.innerHTML = "START";
-    ring.style.stroke = "yellow";
-    clearInterval(interval);
-
-}
+start.addEventListener("click", startStop);
+setting.addEventListener("click", settingOf);

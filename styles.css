@@ -3,7 +3,7 @@
 @font-face {
   font-family: "bebas";
   src: url('./fonts/bebasneue-book-webfont.woff') format('woff'),
-      url('./fonts/bebasneue-book-webfont.woff2') format('woff2');
+    url('./fonts/bebasneue-book-webfont.woff2') format('woff2');
 }
 
 body {
@@ -83,6 +83,7 @@ input[type="number"] {
 input[type="number"]:disabled {
   border-bottom: none;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
