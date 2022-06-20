@@ -10,6 +10,7 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "validateLineBreaks": "LF"
+        // "validateLineBreaks": "LF"
+        "linebreak-style":0
     }
 }
