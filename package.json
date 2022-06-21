@@ -26,8 +26,9 @@
   },
   "lint-staged": {
     "*.{html,css,js}": [
-      "prettier --write",
-      "eslint --fix"
+
+      "npx prettier ",
+      "eslint"
     ]
   },
   "dependencies": {
