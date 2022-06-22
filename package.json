@@ -1,0 +1,39 @@
+{
+    "name": "challenges",
+    "version": "1.0.0",
+    "description": "Poppins - Regular and Bold https://fonts.google.com/specimen/Poppins?query=poppins",
+    "main": "index.js",
+    "devDependencies": {
+        "eslint": "^8.18.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-plugin-react": "^7.30.0",
+        "husky": "^8.0.1",
+        "lint-staged": "^13.0.2",
+        "prettier": "^2.7.1",
+        "pretty-quick": "^3.1.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npx lint-staged",
+            "pre-push": "ng build --aot true"
+        }
+    },
+    "lint-staged": {
+        "*": "npx eslint --fix",
+        "*.{js}": "prettier --write"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepare": "husky install client/.husky"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/taran-08/challenges.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/taran-08/challenges/issues"
+    },
+    "homepage": "https://github.com/taran-08/challenges#readme"
+}
