@@ -156,9 +156,9 @@ button.in-cart {
   grid-template-areas:
     'plate content content'
     'plate quantity price';
-    border-bottom: 1px solid #d7d7f9;
-    margin-bottom: 45px;
-    padding-bottom: 45px;
+  border-bottom: 1px solid #d7d7f9;
+  margin-bottom: 45px;
+  padding-bottom: 45px;
 }
 
 .cart-summary .menu-item {
