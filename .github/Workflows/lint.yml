@@ -9,7 +9,6 @@ on:
     pull_request:
         branches:
             - develop
-
 jobs:
     run-linters:
         name: Run linters
@@ -39,5 +38,3 @@ jobs:
               env:
                   PATTERN: '**.css'
                   INDENT_SPACES: 4
-
-
