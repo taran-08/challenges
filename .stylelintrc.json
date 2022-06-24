@@ -13,6 +13,7 @@
         "color-hex-length":"long",
         "color-function-notation": "legacy",
         "property-no-vendor-prefix":null,
+        "indentation": 4,
         "rule-empty-line-before":null
       }
 }
