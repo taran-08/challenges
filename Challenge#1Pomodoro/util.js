@@ -26,7 +26,7 @@ export const isValidTime = () => {
 export const startTimer = () => {
     ring.style.stroke = 'blue';
     start.innerHTML = 'PAUSE';
-    interval = setInterval(function() {
+    interval = setInterval(() => {
         if (mins.value == 0 && secs.value == 0) {
             clearInterval(interval);
             ring.style.stroke = 'red';
